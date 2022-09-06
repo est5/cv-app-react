@@ -11,6 +11,7 @@
   gap: 1rem;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   color: #595859;
 }
 
@@ -44,7 +45,4 @@ textarea {
 .header__title {
   color: #595859;
   font-size: 1.3rem;
-}
-
-.contact {
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import InlineEdit from '../InlineEdit';
+import TextField from '../textField/TextField';
 import './headerStyle.css';
 
 export default class Header extends React.Component {
@@ -17,9 +17,9 @@ export default class Header extends React.Component {
     this.changeValue = this.changeValue.bind(this);
   }
 
-  changeValue(e) {
+  changeValue(e, name) {
     this.setState({
-      [e.target.name]: e.target.value.trim(),
+      [name]: e,
     });
   }
 
@@ -27,15 +27,15 @@ export default class Header extends React.Component {
     return (
       <div className="container--header">
         <div className="header">
-          <div class="header__name">
-            <InlineEdit
+          <div className="header__name">
+            <TextField
               value={'Name'}
               setValue={this.changeValue}
               name={'name'}
             />
           </div>
-          <div class="header__title">
-            <InlineEdit
+          <div className="header__title">
+            <TextField
               value={'Title'}
               setValue={this.changeValue}
               name={'title'}
@@ -44,26 +44,26 @@ export default class Header extends React.Component {
         </div>
         <div className="contact">
           <div className="contact__address">
-            <InlineEdit
+            <TextField
               value={'Address'}
               setValue={this.changeValue}
               name={'name'}
             />
           </div>
-          <p className="contact__phone">
-            <InlineEdit
+          <div className="contact__phone">
+            <TextField
               value={'Phone'}
               setValue={this.changeValue}
               name={'phone'}
             />
-          </p>
-          <p className="contact__email">
-            <InlineEdit
+          </div>
+          <div className="contact__email">
+            <TextField
               value={'Email'}
               setValue={this.changeValue}
               name={'email'}
             />
-          </p>
+          </div>
         </div>
       </div>
     );

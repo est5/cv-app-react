@@ -1,0 +1,27 @@
+.text-field {
+  display: flex;
+  max-width: 30rem;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.text-edit {
+  position: relative;
+  background-color: rgb(20, 18, 18);
+  color: white;
+  border-radius: 0.3em;
+  padding: 0.1em;
+}
+
+.icon-minus,
+.icon-check {
+  position: relative;
+  color: rgb(0, 128, 111);
+  left: -5rem;
+  z-index: 5;
+}
+
+.icon-minus {
+  color: red;
+}

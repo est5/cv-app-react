@@ -1,0 +1,48 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 5;
+}
+
+.contact {
+  flex-grow: 1;
+  font-size: 0.9rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  color: #595859;
+}
+
+.container--header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+input,
+textarea {
+  background-color: inherit;
+  border: none;
+  font-size: inherit;
+  color: inherit;
+}
+
+.header__name {
+  padding: 1rem 0;
+  border-radius: 0.2em;
+  text-transform: capitalize;
+  font-size: 2rem;
+}
+
+.header__title {
+  color: #595859;
+  font-size: 1.3rem;
+}
+
+.contact {
+}

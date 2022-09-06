@@ -37,6 +37,8 @@ textarea {
   border-radius: 0.2em;
   text-transform: capitalize;
   font-size: 2rem;
+  /* overflow-wrap: break-word;
+  max-width: 40vw; */
 }
 
 .header__title {

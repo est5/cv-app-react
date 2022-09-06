@@ -7,8 +7,8 @@ export default class Header extends React.Component {
     super(props);
 
     this.state = {
-      name: 'ilya buyankov',
-      title: 'Front End Developer',
+      name: 'name',
+      title: 'title',
       address: 'address',
       phone: 'phone',
       email: 'email',
@@ -29,15 +29,14 @@ export default class Header extends React.Component {
         <div className="header">
           <div class="header__name">
             <InlineEdit
-              value={'Ilya Buyankov'}
+              value={'Name'}
               setValue={this.changeValue}
               name={'name'}
-              maxLength={'30'}
             />
           </div>
           <div class="header__title">
             <InlineEdit
-              value={'Front End Developer'}
+              value={'Title'}
               setValue={this.changeValue}
               name={'title'}
             />
@@ -46,21 +45,21 @@ export default class Header extends React.Component {
         <div className="contact">
           <div className="contact__address">
             <InlineEdit
-              value={'address'}
+              value={'Address'}
               setValue={this.changeValue}
               name={'name'}
             />
           </div>
           <p className="contact__phone">
             <InlineEdit
-              value={'phone'}
+              value={'Phone'}
               setValue={this.changeValue}
               name={'phone'}
             />
           </p>
           <p className="contact__email">
             <InlineEdit
-              value={'email'}
+              value={'Email'}
               setValue={this.changeValue}
               name={'email'}
             />

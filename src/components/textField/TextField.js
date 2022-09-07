@@ -21,7 +21,9 @@ const TextField = ({ value, setValue, name, maxLength, uuid }) => {
 
   return (
     <div aria-label="Field name" name={name} className="text-field">
-      <p onClick={() => setShowEdit(true)}>{editingValue || '...'}</p>
+      <p className="value-para" onClick={() => setShowEdit(true)}>
+        {editingValue || '...'}
+      </p>
       {showEdit ? (
         <>
           <input

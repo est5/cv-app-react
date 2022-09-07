@@ -37,7 +37,7 @@ textarea {
 .header__name {
   border-radius: 0.2em;
   text-transform: capitalize;
-  font-size: 2rem;
+  font-size: 2em;
   /* overflow-wrap: break-word;
   max-width: 40vw; */
   color: var(--font-main);
@@ -45,7 +45,7 @@ textarea {
 }
 
 .header__title {
-  color: var(--font-main);
+  color: var(--font-ad);
   font-size: 1.3rem;
-  font-weight: 500;
+  font-weight: 400;
 }

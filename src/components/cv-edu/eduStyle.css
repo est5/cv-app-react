@@ -17,10 +17,10 @@
 .edu-list__entry div:first-child {
   color: var(--font-main);
   display: flex;
-  gap: 0.2em;
+  gap: 0.5em;
 }
 
-.edu-list__entry i {
+.edu-list__entry div:first-child i {
   margin-left: auto;
 }
 

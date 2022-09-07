@@ -1,3 +1,38 @@
 .main-container {
   flex-grow: 5;
+  margin-left: 1em;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+
+  margin-top: 0.2em;
+}
+
+.projects__entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  color: var(--font-ad);
+  border-bottom: 5px solid var(--bg);
+}
+
+.projects__name {
+  color: var(--font-main);
+  font-weight: 700;
+}
+
+.projects__title div {
+  font-weight: 400;
+}
+
+.projects__description {
+  font-weight: 400;
+}
+
+.projects__date {
+  align-self: flex-end;
+  font-weight: 100;
 }

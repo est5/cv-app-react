@@ -33,6 +33,9 @@ export default class Sidebar extends React.Component {
   }
 
   addSkill(obj) {
+    if (this.state.skills.length > 10) {
+      return;
+    }
     this.setState({
       skills: [...this.state.skills, obj],
     });
@@ -60,6 +63,9 @@ export default class Sidebar extends React.Component {
   }
 
   addEdu(obj) {
+    if (this.state.education.length > 5) {
+      return;
+    }
     this.setState({
       education: [...this.state.education, obj],
     });
@@ -67,9 +73,9 @@ export default class Sidebar extends React.Component {
 
   createEmptyEduField() {
     this.addEdu({
-      schoolName: '...',
-      dateYear: '...',
-      title: '...',
+      schoolName: 'school name',
+      dateYear: 'year',
+      title: 'title',
       id: uuid(),
     });
   }

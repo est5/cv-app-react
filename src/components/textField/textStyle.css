@@ -6,6 +6,11 @@
   cursor: pointer;
 }
 
+.text-para {
+  overflow: auto;
+  word-wrap: break-word;
+}
+
 .text-edit {
   position: absolute;
   background-color: var(--bg);

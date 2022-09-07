@@ -10,7 +10,7 @@ export default class HardSkills extends React.Component {
 
   render() {
     return (
-      <div className="skills-list">
+      <section className="skills-list">
         {this.props.skills.map((s) => {
           if (s !== null) {
             return (
@@ -19,7 +19,8 @@ export default class HardSkills extends React.Component {
                   value={s.text}
                   maxLength={20}
                   setValue={this.props.editSkill}
-                  name={s.id}
+                  name={'text'}
+                  uuid={s.id}
                 />
                 <i
                   onClick={() => this.props.onDel(s.id)}
@@ -29,7 +30,7 @@ export default class HardSkills extends React.Component {
             );
           }
         })}
-      </div>
+      </section>
     );
   }
 }

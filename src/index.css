@@ -5,14 +5,16 @@
   margin: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+  font-family: 'Roboto';
 }
+
+/* STYLE */
 
 #root {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-
   --card: #222831;
   --bg: #393e46;
   --font-main: #ffd369;
@@ -49,5 +51,5 @@ h3 {
   justify-content: space-between;
   margin-right: 15px;
   color: var(--font-ad);
-  font-weight: 800;
+  font-weight: 500;
 }

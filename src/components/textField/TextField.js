@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './textStyle.css';
 
-const TextField = ({ value, setValue, name, maxLength }) => {
+const TextField = ({ value, setValue, name, maxLength, uuid }) => {
   const [editingValue, setEditingValue] = useState(value);
   const [showEdit, setShowEdit] = useState(false);
 
@@ -10,7 +10,7 @@ const TextField = ({ value, setValue, name, maxLength }) => {
       setEditingValue('...');
     }
     let out = editingValue.trim();
-    setValue(out, name);
+    setValue(out, uuid, name);
     setShowEdit(false);
   };
 

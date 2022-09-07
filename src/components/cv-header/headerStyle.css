@@ -13,6 +13,7 @@
   flex-direction: column;
   align-items: flex-end;
   color: var(--font-main);
+  font-weight: 400;
 }
 
 .container--header {
@@ -40,11 +41,11 @@ textarea {
   /* overflow-wrap: break-word;
   max-width: 40vw; */
   color: var(--font-main);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .header__title {
   color: var(--font-main);
-
   font-size: 1.3rem;
+  font-weight: 500;
 }

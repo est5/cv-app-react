@@ -16,7 +16,7 @@ export default class Header extends React.Component {
     this.changeValue = this.changeValue.bind(this);
   }
 
-  changeValue(e, name) {
+  changeValue(e, uuid, name) {
     this.setState({
       [name]: e,
     });

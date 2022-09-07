@@ -7,41 +7,33 @@ const TextField = ({ value, setValue, name, maxLength }) => {
 
   const onClick = () => {
     if (editingValue === '') {
-      editingValue = value;
+      setEditingValue('...');
     }
     let out = editingValue.trim();
-    setValue(editingValue, name);
+    setValue(out, name);
+    setShowEdit(false);
+  };
+
+  const onClose = () => {
+    setEditingValue(value);
     setShowEdit(false);
   };
 
   return (
-    <div
-      maxLength={maxLength}
-      aria-label="Field name"
-      name={name}
-      className="text-field"
-    >
+    <div aria-label="Field name" name={name} className="text-field">
       <p onClick={() => setShowEdit(true)}>{editingValue || '...'}</p>
       {showEdit ? (
         <>
           <input
+            maxLength={maxLength}
             className="text-edit"
             type="text"
             name={name}
             value={editingValue}
             onChange={(e) => setEditingValue(e.target.value)}
           />
-          <i
-            className="input-icon icon-check"
-            onClick={() => {
-              setValue(editingValue, name);
-              setShowEdit(false);
-            }}
-          ></i>
-          <i
-            className="input-icon icon-minus"
-            onClick={() => setShowEdit(false)}
-          ></i>
+          <i className="input-icon icon-check" onClick={onClick}></i>
+          <i className="input-icon icon-minus" onClick={onClose}></i>
         </>
       ) : (
         <></>

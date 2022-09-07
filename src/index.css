@@ -32,10 +32,7 @@
 }
 
 .add-entry {
-  background-color: #e1e1e1;
-  border-radius: 1px solid black;
   padding: 0.1rem 2em;
-  border-radius: 8px;
 }
 
 .add-entry:hover {

@@ -1,0 +1,17 @@
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em 0;
+  color: #414f5a;
+}
+.skill__entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.skill__del {
+  color: red;
+  cursor: pointer;
+}

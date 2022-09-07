@@ -7,11 +7,10 @@ export default class Header extends React.Component {
     super(props);
 
     this.state = {
-      name: 'name',
-      title: 'title',
-      address: 'address',
-      phone: 'phone',
-      email: 'email',
+      name: 'Name',
+      title: 'Title',
+      phone: 'Phone',
+      email: 'Email',
     };
 
     this.changeValue = this.changeValue.bind(this);
@@ -29,37 +28,30 @@ export default class Header extends React.Component {
         <div className="header">
           <div className="header__name">
             <TextField
-              value={'Name'}
+              value={this.state.name}
               setValue={this.changeValue}
               name={'name'}
             />
           </div>
           <div className="header__title">
             <TextField
-              value={'Title'}
+              value={this.state.title}
               setValue={this.changeValue}
               name={'title'}
             />
           </div>
         </div>
         <div className="contact">
-          <div className="contact__address">
-            <TextField
-              value={'Address'}
-              setValue={this.changeValue}
-              name={'name'}
-            />
-          </div>
           <div className="contact__phone">
             <TextField
-              value={'Phone'}
+              value={this.state.phone}
               setValue={this.changeValue}
               name={'phone'}
             />
           </div>
           <div className="contact__email">
             <TextField
-              value={'Email'}
+              value={this.state.email}
               setValue={this.changeValue}
               name={'email'}
             />

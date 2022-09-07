@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../Button';
 import './mainStyle.css';
 
 export default class Main extends React.Component {
@@ -6,7 +7,7 @@ export default class Main extends React.Component {
     return (
       <div className="main-container">
         <h3>
-          Projects <button className="add-entry">Add</button>
+          Projects <Button />
         </h3>
       </div>
     );

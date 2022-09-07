@@ -7,19 +7,17 @@
 }
 
 .text-edit {
-  position: relative;
-  background-color: rgb(20, 18, 18);
-  color: white;
+  position: absolute;
+  background-color: rgba(20, 18, 18, 0.753);
+  color: rgb(194, 223, 228);
   border-radius: 0.3em;
   padding: 0.1em;
 }
 
 .icon-minus,
 .icon-check {
-  position: relative;
   color: rgb(0, 128, 111);
-  left: -5rem;
-  z-index: 5;
+  z-index: 1;
 }
 
 .icon-minus {

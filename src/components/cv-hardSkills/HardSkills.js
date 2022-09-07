@@ -21,12 +21,10 @@ export default class HardSkills extends React.Component {
                   setValue={this.props.editSkill}
                   name={s.id}
                 />
-                <span
+                <i
                   onClick={() => this.props.onDel(s.id)}
-                  className="skill__del"
-                >
-                  X
-                </span>
+                  className="skill__del icon-remove"
+                ></i>
               </div>
             );
           }

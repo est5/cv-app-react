@@ -6,7 +6,7 @@ const TextField = ({ value, setValue, name, maxLength }) => {
   const [showEdit, setShowEdit] = useState(false);
 
   const onClick = () => {
-    if (editingValue === '') {
+    if (editingValue.trim() === '') {
       setEditingValue('...');
     }
     let out = editingValue.trim();

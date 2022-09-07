@@ -28,6 +28,7 @@ export default class Header extends React.Component {
         <div className="header">
           <div className="header__name">
             <TextField
+              maxLength={20}
               value={this.state.name}
               setValue={this.changeValue}
               name={'name'}
@@ -35,6 +36,7 @@ export default class Header extends React.Component {
           </div>
           <div className="header__title">
             <TextField
+              maxLength={20}
               value={this.state.title}
               setValue={this.changeValue}
               name={'title'}
@@ -44,6 +46,7 @@ export default class Header extends React.Component {
         <div className="contact">
           <div className="contact__phone">
             <TextField
+              maxLength={20}
               value={this.state.phone}
               setValue={this.changeValue}
               name={'phone'}
@@ -51,6 +54,7 @@ export default class Header extends React.Component {
           </div>
           <div className="contact__email">
             <TextField
+              maxLength={30}
               value={this.state.email}
               setValue={this.changeValue}
               name={'email'}

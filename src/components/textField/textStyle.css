@@ -8,18 +8,18 @@
 
 .text-edit {
   position: absolute;
-  background-color: rgba(20, 18, 18, 0.753);
-  color: rgb(194, 223, 228);
-  border-radius: 0.3em;
-  padding: 0.1em;
+  background-color: var(--bg);
+  color: var(--font-ad);
+  border-radius: 0.5em;
+  padding: 0.2em;
 }
 
 .icon-minus,
 .icon-check {
-  color: rgb(0, 128, 111);
+  color: #76ba99;
   z-index: 1;
 }
 
 .icon-minus {
-  color: red;
+  color: #e94560;
 }

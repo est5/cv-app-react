@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 1em;
   padding: 1em 0;
-  color: #414f5a;
+  color: var(--font-main);
 }
 .skill__entry {
   display: flex;
@@ -12,6 +12,6 @@
 }
 
 .skill__del {
-  color: red;
+  color: #e94560;
   cursor: pointer;
 }

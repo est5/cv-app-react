@@ -6,13 +6,21 @@ import Sidebar from './components/cv-sidebar/Sidebar';
 class App extends React.Component {
   render() {
     return (
-      <div className="container">
-        <Header />
-        <section className="main-section">
-          <Sidebar />
-          <Main />
+      <>
+        <section className="info">
+          <div>Click on fields to edit</div>
+          <a href="https://github.com/est5" target="_blank">
+            <i className="icon-github"></i>est5
+          </a>
         </section>
-      </div>
+        <div className="container">
+          <Header />
+          <section className="main-section">
+            <Sidebar />
+            <Main />
+          </section>
+        </div>
+      </>
     );
   }
 }

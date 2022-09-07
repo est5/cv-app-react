@@ -91,7 +91,7 @@ export default class Main extends React.Component {
               </div>
               <div className="projects__description">
                 <TextField
-                  maxLength={30}
+                  maxLength={50}
                   value={prj.description}
                   name={'description'}
                   uuid={prj.id}

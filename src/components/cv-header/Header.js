@@ -1,67 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TextField from '../textField/TextField';
 import './headerStyle.css';
 
-export default class Header extends React.Component {
-  constructor(props) {
-    super(props);
+function Header() {
+  const [header, setHeader] = useState({
+    name: 'Name',
+    title: 'Title',
+    phone: 'Phone',
+    email: 'Email',
+  });
 
-    this.state = {
-      name: 'Name',
-      title: 'Title',
-      phone: 'Phone',
-      email: 'Email',
-    };
-
-    this.changeValue = this.changeValue.bind(this);
-  }
-
-  changeValue(e, uuid, name) {
-    this.setState({
+  function changeValue(e, uuid = null, name) {
+    setHeader({
       [name]: e,
     });
   }
 
-  render() {
-    return (
-      <div className="container--header">
-        <div className="header">
-          <div className="header__name">
-            <TextField
-              maxLength={20}
-              value={this.state.name}
-              setValue={this.changeValue}
-              name={'name'}
-            />
-          </div>
-          <div className="header__title">
-            <TextField
-              maxLength={20}
-              value={this.state.title}
-              setValue={this.changeValue}
-              name={'title'}
-            />
-          </div>
+  return (
+    <div className="container--header">
+      <div className="header">
+        <div className="header__name">
+          <TextField
+            maxLength={20}
+            value={header.name}
+            setValue={changeValue}
+            name={'name'}
+          />
         </div>
-        <div className="contact">
-          <div className="contact__phone">
-            <TextField
-              maxLength={20}
-              value={this.state.phone}
-              setValue={this.changeValue}
-              name={'phone'}
-            />
-          </div>
-          <div className="contact__email">
-            <TextField
-              maxLength={30}
-              value={this.state.email}
-              setValue={this.changeValue}
-              name={'email'}
-            />
-          </div>
+        <div className="header__title">
+          <TextField
+            maxLength={20}
+            value={header.title}
+            setValue={changeValue}
+            name={'title'}
+          />
         </div>
       </div>
-    );
-  }
+      <div className="contact">
+        <div className="contact__phone">
+          <TextField
+            maxLength={20}
+            value={header.phone}
+            setValue={changeValue}
+            name={'phone'}
+          />
+        </div>
+        <div className="contact__email">
+          <TextField
+            maxLength={30}
+            value={header.email}
+            setValue={changeValue}
+            name={'email'}
+          />
+        </div>
+      </div>
+    </div>
+  );
 }
+
+export default Header;

@@ -1,78 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
 import uuid from 'react-uuid';
 import PlusButton from '../Button';
 import Education from '../cv-edu/Education';
 import HardSkills from '../cv-hardSkills/HardSkills';
 import './sidebarStyle.css';
 
-export default class Sidebar extends React.Component {
-  constructor(props) {
-    super(props);
+function Sidebar() {
+  const [education, setEducation] = useState([
+    {
+      schoolName: 'Hogwarts',
+      title: 'Magistr',
+      dateYear: '1995',
+      id: uuid(),
+    },
+  ]);
 
-    this.state = {
-      education: [
-        {
-          schoolName: 'Hogwarts',
-          title: 'Magistr',
-          dateYear: '1995',
-          id: uuid(),
-        },
-      ],
-      skills: [{ text: 'React', id: uuid() }],
-    };
+  const [skills, setSkills] = useState([{ text: 'React', id: uuid() }]);
 
-    this.addSkill = this.addSkill.bind(this);
-    this.createEmptyField = this.createEmptyField.bind(this);
-    this.editSkill = this.editSkill.bind(this);
-    this.delSkill = this.delSkill.bind(this);
-
-    this.addEdu = this.addEdu.bind(this);
-    this.createEmptyEduField = this.createEmptyEduField.bind(this);
-    this.editEdu = this.editEdu.bind(this);
-    this.delEdu = this.delEdu.bind(this);
-  }
-
-  addSkill(obj) {
-    if (this.state.skills.length > 10) {
+  function addSkill(obj) {
+    if (skills.length > 10) {
       return;
     }
-    this.setState({
-      skills: [...this.state.skills, obj],
-    });
+    setSkills([...skills, obj]);
   }
 
-  createEmptyField() {
-    this.addSkill({ text: '...', id: uuid() });
+  function createEmptyField() {
+    addSkill({ text: '...', id: uuid() });
   }
 
-  editSkill(text, uid, name = 'text') {
-    this.setState({
-      skills: this.state.skills.map((skill) => {
+  function editSkill(text, uid, name = 'text') {
+    setSkills(
+      skills.map((skill) => {
         if (skill.id === uid) skill[name] = text;
         return skill;
-      }),
-    });
+      })
+    );
   }
 
-  delSkill(uid) {
-    const arr = this.state.skills.filter((skill) => skill.id !== uid);
+  function delSkill(uid) {
+    const arr = skills.filter((skill) => skill.id !== uid);
 
-    this.setState({
-      skills: arr,
-    });
+    setSkills(arr);
   }
 
-  addEdu(obj) {
-    if (this.state.education.length > 5) {
+  function addEdu(obj) {
+    if (education.length > 5) {
       return;
     }
-    this.setState({
-      education: [...this.state.education, obj],
-    });
+    setEducation([...education, obj]);
   }
 
-  createEmptyEduField() {
-    this.addEdu({
+  function createEmptyEduField() {
+    addEdu({
       schoolName: 'school name',
       dateYear: 'year',
       title: 'title',
@@ -80,43 +59,33 @@ export default class Sidebar extends React.Component {
     });
   }
 
-  editEdu(value, uid, field = '') {
-    this.setState({
-      education: this.state.education.map((edu) => {
+  function editEdu(value, uid, field = '') {
+    setEducation(
+      education.map((edu) => {
         if (edu.id === uid) edu[field] = value;
         return edu;
-      }),
-    });
-  }
-
-  delEdu(uid) {
-    const arr = this.state.education.filter((edu) => edu.id !== uid);
-
-    this.setState({
-      education: arr,
-    });
-  }
-
-  render() {
-    return (
-      <div className="sidebar-container">
-        <h3>
-          Techincal skills <PlusButton onClick={this.createEmptyField} />
-        </h3>
-        <HardSkills
-          skills={this.state.skills}
-          editSkill={this.editSkill}
-          onDel={this.delSkill}
-        />
-        <h3>
-          Education <PlusButton onClick={this.createEmptyEduField} />
-        </h3>
-        <Education
-          edu={this.state.education}
-          editEdu={this.editEdu}
-          onDel={this.delEdu}
-        />
-      </div>
+      })
     );
   }
+
+  function delEdu(uid) {
+    const arr = education.filter((edu) => edu.id !== uid);
+
+    setEducation(arr);
+  }
+
+  return (
+    <div className="sidebar-container">
+      <h3>
+        Techincal skills <PlusButton onClick={createEmptyField} />
+      </h3>
+      <HardSkills skills={skills} editSkill={editSkill} onDel={delSkill} />
+      <h3>
+        Education <PlusButton onClick={createEmptyEduField} />
+      </h3>
+      <Education edu={education} editEdu={editEdu} onDel={delEdu} />
+    </div>
+  );
 }
+
+export default Sidebar;
